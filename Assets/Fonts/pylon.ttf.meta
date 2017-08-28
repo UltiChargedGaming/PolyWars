@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 7c786a31b5b03a844b468b2bd21e8e0c
+timeCreated: 1502564660
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Pylon
+  fontNames:
+  - Pylon
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

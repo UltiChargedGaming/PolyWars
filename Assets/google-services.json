@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "827434333836",
+    "firebase_url": "https://operation-polywars.firebaseio.com",
+    "project_id": "operation-polywars",
+    "storage_bucket": "operation-polywars.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827434333836:android:4a3afd7f655f4f9a",
+        "android_client_info": {
+          "package_name": "com.UltiChargedGaming.PolyWars"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "827434333836-p08u2agn1bav5n8kadv7relg2a4h2kpb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAI5NEjwqDXWHWLNDWIFbYBkHXJ42ehMiU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

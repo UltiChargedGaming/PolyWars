@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="firebase_database_url" translatable="false">https://operation-polywars.firebaseio.com</string>
+  <string name="gcm_defaultSenderId" translatable="false">827434333836</string>
+  <string name="google_storage_bucket" translatable="false">operation-polywars.appspot.com</string>
+  <string name="project_id" translatable="false">operation-polywars</string>
+  <string name="google_api_key" translatable="false">AIzaSyAI5NEjwqDXWHWLNDWIFbYBkHXJ42ehMiU</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAI5NEjwqDXWHWLNDWIFbYBkHXJ42ehMiU</string>
+  <string name="google_app_id" translatable="false">1:827434333836:android:4a3afd7f655f4f9a</string>
+  <string name="default_web_client_id" translatable="false">827434333836-p08u2agn1bav5n8kadv7relg2a4h2kpb.apps.googleusercontent.com</string>
+</resources>
