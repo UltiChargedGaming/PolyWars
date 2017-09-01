@@ -16,6 +16,7 @@ public class GameManager : Photon.MonoBehaviour {
     {
         
     }
+
     [PunRPC]
     void DestroyFlag()
     {

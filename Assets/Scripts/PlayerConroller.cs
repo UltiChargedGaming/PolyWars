@@ -21,7 +21,7 @@ public class PlayerConroller : Photon.MonoBehaviour {
     public int blueScore;
     //Player Ui
     private Text matchTimerTxt;
-    public float matchTimer = 5f;
+    public float matchTimer = 300f;
     public float teamScoreLimit = 30f;
     private float teamScoreFillamt;
     private Text blueScoreUI;
