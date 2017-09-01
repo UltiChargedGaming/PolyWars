@@ -25,6 +25,14 @@ ExportedObj/
 
 # Unity3D generated meta files
 *.pidb.meta
+[Oo]bj/
+
+[Bb]uild
+sysinfo.txt
+
+*.stackdump
+
+
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
@@ -32,3 +40,12 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+$RECYCLE.BIN/
+Desktop.ini
