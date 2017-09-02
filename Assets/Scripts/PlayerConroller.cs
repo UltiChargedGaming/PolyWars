@@ -16,21 +16,12 @@ public class PlayerConroller : Photon.MonoBehaviour {
     public string gunName = "";
     public int currentClip = 0;
 
-    //Team Stats
-    public int redScore;
-    public int blueScore;
+
     //Player Ui
-    private Text matchTimerTxt;
-    public float matchTimer = 300f;
-    public float teamScoreLimit = 30f;
-    private float teamScoreFillamt;
-    private Text blueScoreUI;
-    private Text redScoreUI;
-    private Image redScoreBar;
-    private Image blueScoreBar;
+
     private TextMesh playerNameTxt;
     private Text kdaTxt;
-    private Text flagUI;
+
     private int killScore;
     private int deaths;
     private string nickName;
@@ -60,15 +51,7 @@ public class PlayerConroller : Photon.MonoBehaviour {
 
     // Use this for initialization
     void Awake() {
-        // Get Team scoreboard objects
-        redScoreUI = GameObject.Find("RedScoreTxt").GetComponent<Text>();
-        redScoreBar = GameObject.Find("RedScoreBar").GetComponent<Image>();
-        blueScoreUI = GameObject.Find("BlueScoreTxt").GetComponent<Text>();
-        blueScoreBar = GameObject.Find("BlueScoreBar").GetComponent<Image>();
-
-        teamScoreFillamt = 1 / teamScoreLimit;
         preAimmoveSpeed = moveSpeed / 2;
-        flagUI = GameObject.Find("flagUI").GetComponent<Text>();
         //Check if There is a FxManager
         fxManager = FindObjectOfType<FxManager>();
         if (fxManager == null) {
@@ -76,7 +59,7 @@ public class PlayerConroller : Photon.MonoBehaviour {
         }
 
         //Initialize Components
-        matchTimerTxt = GameObject.Find("timerTxt").GetComponent<Text>();
+
         playerNameTxt = GameObject.Find("playerTxt").GetComponent<TextMesh>();
         m_Animator = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
@@ -100,8 +83,6 @@ public class PlayerConroller : Photon.MonoBehaviour {
         deaths = (int)PhotonNetwork.player.CustomProperties["Deaths"];
         kdaTxt.text = killScore + "/" + deaths;
         hasFlag = GetComponent<GunController>().hasFlag;
-        FlagTeamUI();
-        TeamScoreCalc();
         //If theres no Gun Hide crossHair
         if (gunControllScript.noGun.activeSelf) {
             crossHair.SetActive(false);
@@ -121,63 +102,7 @@ public class PlayerConroller : Photon.MonoBehaviour {
     }
     //End of Update Func
 
-    void TeamScoreCalc() {
-        MatchTimer();
-        redScore = (int)PhotonNetwork.room.CustomProperties["RedScore"];
-        blueScore = (int)PhotonNetwork.room.CustomProperties["BlueScore"];
-
-        redScoreUI.text = redScore.ToString();
-        redScoreBar.fillAmount = (float)redScore * teamScoreFillamt;
-        blueScoreUI.text = blueScore.ToString();
-        blueScoreBar.fillAmount = (float)blueScore * teamScoreFillamt;
-
-        //Check to see if Timer is 0 and its not a draw
-        //if timer is 0 and its a draw wait for the next kill
-        if(matchTimer <= 0 && redScore != blueScore){
-            if (blueScore > redScore)
-            {
-                //Blue team reached the kills limit = they won
-                Debug.Log("Blue Wins/End match/Add Rank...");
-            }
-            if (redScore > blueScore)
-            {
-                //Red team reached the kills limit = they won
-                Debug.Log("Red Wins/End match/Add Rank...");
-            }
-        }
-
-
-        if(blueScore == teamScoreLimit){
-        //Blue team reached the kills limit = they won
-        Debug.Log("Blue Wins/End match/Add Rank...");
-        }
-        if (redScore == teamScoreLimit){
-            //Blue team reached the kills limit = they won
-            Debug.Log("Red Wins/End match/Add Rank...");
-        }
-
-    }
-    //Match Timer
-    void MatchTimer()
-    {
-        if(matchTimer >= 0){
-        string minutes = Mathf.Floor(matchTimer / 60).ToString("00");
-        string seconds = (matchTimer % 60).ToString("00");
-        matchTimer -= Time.deltaTime;
-        matchTimerTxt.text = minutes + ":" + seconds;
-        }
-    }
-
-    //Team Flag Checker
-    void FlagTeamUI(){
-		if ((int)PhotonNetwork.room.CustomProperties["FlagSide"] == 0) {
-			flagUI.text = "Capture The FLAG!";
-		} else if ((int)PhotonNetwork.room.CustomProperties ["FlagSide"] == 1) {
-			flagUI.text = "BlueTeam holds the FLAG";
-		} else if ((int)PhotonNetwork.room.CustomProperties ["FlagSide"] == 2) {
-			flagUI.text = "RedTeam holds the FLAG";
-		}
-	}
+ 
 	// Check if player has flag
 	void TeamHoldsFlag() {
 		if (gunControllScript.flag.activeSelf) {
