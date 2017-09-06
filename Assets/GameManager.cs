@@ -7,7 +7,6 @@ public class GameManager : Photon.MonoBehaviour {
     
 	private Text matchTimerTxt;
 	public float matchTimer = 5f;
-
 	//Team Stats
 	public int redScore;
 	public int blueScore;
