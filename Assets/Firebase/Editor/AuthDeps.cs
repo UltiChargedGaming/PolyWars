@@ -54,7 +54,7 @@ public class FirebaseAuthDeps : AssetPostprocessor
             new object[] {
                 "com.google.firebase",
                 "firebase-auth",
-                "11.0.4"
+                "11.2.0"
             },
             namedArgs: new Dictionary<string, object>() {
                 { "packageIds",
@@ -72,7 +72,7 @@ public class FirebaseAuthDeps : AssetPostprocessor
             new object[] {
                 "com.google.firebase",
                 "firebase-core",
-                "11.0.4"
+                "11.2.0"
             },
             namedArgs: new Dictionary<string, object>() {
                 { "packageIds",
@@ -90,7 +90,7 @@ public class FirebaseAuthDeps : AssetPostprocessor
             new object[] {
                 "com.google.firebase",
                 "firebase-auth-unity",
-                "4.0.3"
+                "4.1.0"
             },
             namedArgs: new Dictionary<string, object>() {
                 { "packageIds",
@@ -112,7 +112,7 @@ public class FirebaseAuthDeps : AssetPostprocessor
             iosResolver, "AddPod",
             new object[] { "Firebase/Auth" }, 
             new Dictionary<string, object>() { 
-                { "version", "4.0.4" },
+                { "version", "4.1.0" },
                 { "minTargetSdk", null },
                 { "sources", null }
             });
